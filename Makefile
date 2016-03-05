@@ -4,3 +4,6 @@ s:
 	docker run -it atyenoria/bench sh
 r:
 	docker run atyenoria/bench
+
+a:
+	ls
