@@ -8,8 +8,6 @@ pushd result
 
 
 
-
-
 # wrk -c 110 -t 110 -d 5 http://laravel.horita-works.com/
 cnt=10
 

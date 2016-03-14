@@ -1,7 +1,7 @@
 FROM      golang:alpine
 
 RUN apk update
-RUN apk add git
+RUN apk add git unzip
 
 
 RUN curl -L  https://github.com/coreos/etcd/releases/download/v2.2.5/etcd-v2.2.5-linux-amd64.tar.gz -o etcd-v2.2.5-linux-amd64.tar.gz && \
@@ -18,6 +18,10 @@ RUN curl -L -o confd https://github.com/kelseyhightower/confd/releases/download/
 RUN go get github.com/rakyll/boom
 
 
+RUN curl -L https://releases.hashicorp.com/consul/0.6.3/consul_0.6.3_linux_amd64.zip -o consul.zip && \
+    unzip consul.zip && \
+    mv consul /bin && \
+    rm -rf consul.zip
 
 # ENTRYPOINT ["/go/bin/boom"]
 # ENTRYPOINT ["/bin/etcdctl"]
