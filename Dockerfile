@@ -2,7 +2,7 @@ FROM      golang:alpine
 
 RUN apk update
 RUN apk add git unzip
-
+RUN apk add mysql-client
 
 RUN curl -L  https://github.com/coreos/etcd/releases/download/v2.2.5/etcd-v2.2.5-linux-amd64.tar.gz -o etcd-v2.2.5-linux-amd64.tar.gz && \
     tar xzvf etcd-v2.2.5-linux-amd64.tar.gz && \
